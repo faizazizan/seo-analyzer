@@ -183,3 +183,6 @@ app.post('/api/compress', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// Export for Vercel serverless
+module.exports = app;
