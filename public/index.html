@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analyzer | Advanced N-Gram & Semantic Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>SEO Analyzer</h1>
+            <p>Advanced N-Gram, LSI & On-Page Analysis</p>
+        </header>
+
+        <section class="search-section">
+            <div class="glass-card search-card">
+                <form id="analyzeForm">
+                    <div class="input-group">
+                        <input type="url" id="urlInput" placeholder="Enter URL to analyze (e.g., https://example.com)"
+                            required>
+                        <button type="submit" id="analyzeBtn">
+                            <span class="btn-text">Analyze</span>
+                            <div class="loader" id="btnLoader"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <div id="resultsArea" class="results-container hidden">
+            <!-- Meta Data Section -->
+            <section class="grid-section">
+                <div class="glass-card meta-card">
+                    <h2>Meta Data</h2>
+                    <div class="meta-item">
+                        <span class="label">Title:</span>
+                        <p id="metaTitle" class="value">Loading...</p>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Description:</span>
+                        <p id="metaDescription" class="value">Loading...</p>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Word Count:</span>
+                        <p id="wordCount" class="value">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Headings Section -->
+            <section class="grid-section">
+                <div class="glass-card headings-card">
+                    <h2>Headings Structure</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="h1">H1</button>
+                        <button class="tab-btn" data-tab="h2">H2</button>
+                        <button class="tab-btn" data-tab="h3">H3</button>
+                    </div>
+                    <div class="tab-content" id="headingsContent">
+                        <!-- Headings will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- N-Grams Analysis -->
+            <section class="grid-section full-width">
+                <div class="glass-card chart-card">
+                    <h2>Keyword Frequency (1-Grams)</h2>
+                    <canvas id="oneGramChart"></canvas>
+                </div>
+            </section>
+
+            <section class="grid-section two-col">
+                <div class="glass-card chart-card">
+                    <h2>Top Phrases (2-Grams)</h2>
+                    <div id="twoGramsList" class="keyword-list"></div>
+                </div>
+                <div class="glass-card chart-card">
+                    <h2>Long-tail Keywords (3-Grams)</h2>
+                    <div id="threeGramsList" class="keyword-list"></div>
+                </div>
+            </section>
+
+            <!-- Semantic Compressor -->
+            <section class="grid-section full-width">
+                <div class="glass-card compressor-card">
+                    <h2>Semantic Content Compressor</h2>
+                    <p class="section-desc">Compress content while retaining semantic meaning.</p>
+
+                    <div class="compressor-controls">
+                        <div class="slider-container">
+                            <label for="compressionLevel">Compression Level: <span id="levelValue">1
+                                    (Original)</span></label>
+                            <input type="range" id="compressionLevel" min="1" max="5" value="1" step="1">
+                            <div class="slider-labels">
+                                <span>Original</span>
+                                <span>Summary</span>
+                            </div>
+                        </div>
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <span class="stat-label">Original Characters</span>
+                                <span id="originalCharCount" class="stat-value">0</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Compressed Characters</span>
+                                <span id="compressedCharCount" class="stat-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="compressed-content-area">
+                        <div id="compressedText" class="text-content">Content will appear here after analysis...</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
