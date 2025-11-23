@@ -1,0 +1,23 @@
+# Task List - SEO Analyzer
+
+- [x] Planning
+    - [x] Create implementation plan
+    - [x] Review plan with user
+- [/] Backend Development
+    - [x] Initialize Node.js project
+    - [x] Create Express server setup
+    - [x] Implement URL fetching and HTML parsing (Cheerio)
+    - [x] Implement N-gram analysis logic
+    - [x] Implement Heading and On-page SEO extraction
+    - [x] Implement Basic Semantic/Keyword density analysis
+    - [x] Create API endpoint `/api/analyze`
+- [/] Frontend Development
+    - [x] Create HTML structure (index.html)
+    - [x] Create CSS styling (Modern, Glassmorphism, Dark Mode)
+    - [x] Create Client-side logic (script.js)
+    - [x] Implement Charts/Visuals for N-grams
+- [x] Verification
+    - [x] Test with various URLs
+    - [x] Verify N-gram accuracy
+    - [x] Check Mobile Responsiveness
+    - [x] Create Walkthrough
